@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <!-- GSAP & ScrollTrigger -->
+    <!-- GSAP & ScrollTrigger for animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <style>
@@ -17,7 +17,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            cursor: none; /* hide default cursor */
+            cursor: none; /* hide default cursor for custom one */
         }
 
         body {
@@ -33,13 +33,13 @@
         .cursor {
             width: 20px;
             height: 20px;
-            border: 2px solid #d32f2f;
+            border: 2px solid #D10000; /* GodMode red */
             border-radius: 50%;
             position: fixed;
             pointer-events: none;
             z-index: 9999;
             mix-blend-mode: difference;
-            transition: transform 0.2s ease;
+            transition: transform 0.1s ease;
             transform: translate(-50%, -50%);
         }
         .cursor-follower {
@@ -50,19 +50,19 @@
             position: fixed;
             pointer-events: none;
             z-index: 9998;
-            transition: transform 0.4s ease, width 0.3s, height 0.3s;
+            transition: width 0.3s, height 0.3s, border-color 0.3s;
             transform: translate(-50%, -50%);
         }
         a:hover ~ .cursor-follower,
         button:hover ~ .cursor-follower {
             width: 60px;
             height: 60px;
-            border-color: #d32f2f;
+            border-color: #D10000;
         }
 
         /* RED ACCENT */
         .red {
-            color: #d32f2f;
+            color: #D10000;
         }
 
         /* CONTAINER */
@@ -91,7 +91,7 @@
             line-height: 1;
         }
         .logo span {
-            color: #d32f2f;
+            color: #D10000;
             margin-left: 4px;
         }
 
@@ -105,10 +105,10 @@
             transition: color 0.2s;
         }
         .nav-links a:hover {
-            color: #d32f2f;
+            color: #D10000;
         }
 
-        /* HERO – split screen */
+        /* HERO – split screen, huge text */
         .hero {
             padding: 80px 40px 60px;
             display: grid;
@@ -137,7 +137,7 @@
 
         .hero-right {
             text-align: right;
-            border-left: 2px solid #d32f2f;
+            border-left: 2px solid #D10000;
             padding-left: 30px;
         }
 
@@ -164,7 +164,7 @@
             display: block;
         }
 
-        /* FIRST ABOUT – two columns */
+        /* FIRST ABOUT – two columns (exactly like "About me") */
         .about-split {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -186,7 +186,7 @@
             max-width: 500px;
         }
 
-        /* WHAT I DO – duplicated cards */
+        /* WHAT I DO – duplicated cards (exactly like original) */
         .what-section {
             padding: 80px 40px;
             border-bottom: 1px solid rgba(255,255,255,0.08);
@@ -204,7 +204,7 @@
             text-transform: uppercase;
         }
         .section-header .eyebrow {
-            color: #d32f2f;
+            color: #D10000;
             font-weight: 500;
             font-size: 1rem;
             letter-spacing: 2px;
@@ -233,7 +233,7 @@
             font-size: 2rem;
             font-weight: 700;
             margin-bottom: 20px;
-            color: #d32f2f;
+            color: #D10000;
             text-transform: uppercase;
         }
 
@@ -266,7 +266,7 @@
         }
         .exp-item .year {
             font-size: 1rem;
-            color: #d32f2f;
+            color: #D10000;
             font-weight: 500;
             margin-bottom: 5px;
         }
@@ -279,7 +279,7 @@
             color: #888;
         }
 
-        /* CLIENTS – with funny descriptions */
+        /* CLIENTS – with witty descriptions (GodMode style) */
         .clients-section {
             padding: 80px 40px;
             border-bottom: 1px solid rgba(255,255,255,0.08);
@@ -293,7 +293,7 @@
         }
 
         .client-card {
-            border-top: 2px solid #d32f2f;
+            border-top: 2px solid #D10000;
             padding-top: 20px;
         }
         .client-card h4 {
@@ -334,14 +334,14 @@
         }
         .testimonial .author {
             font-weight: 500;
-            color: #d32f2f;
+            color: #D10000;
         }
         .testimonial .role {
             font-size: 0.9rem;
             color: #666;
         }
 
-        /* SECOND ABOUT – playful */
+        /* SECOND ABOUT – playful (like "Hiding bad shit since 2009") */
         .about-second {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -360,6 +360,66 @@
             color: #bbb;
         }
 
+        /* FILM GRID (from your original WORK section, now styled as cards) */
+        .film-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 60px;
+        }
+        .film-card {
+            background: #111;
+            border: 1px solid #222;
+            padding: 30px 20px;
+            text-align: center;
+            transition: background 0.2s;
+            text-decoration: none;
+            color: white;
+        }
+        .film-card:hover {
+            background: #1a1a1a;
+        }
+        .film-card .title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .film-card .lang {
+            color: #D10000;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        /* CONTACT PAGE (simplified, matching the design) */
+        .contact-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            padding: 80px 40px;
+        }
+        .contact-info {
+            border-left: 2px solid #D10000;
+            padding-left: 30px;
+        }
+        .contact-info .ci {
+            margin-bottom: 30px;
+        }
+        .ci-l {
+            font-size: 0.9rem;
+            color: #888;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        .ci-v {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: white;
+            text-decoration: none;
+        }
+        .ci-v:hover {
+            color: #D10000;
+        }
+
         /* FOOTER */
         footer {
             padding: 60px 40px 40px;
@@ -375,7 +435,7 @@
             line-height: 1;
         }
         .footer-logo span {
-            color: #d32f2f;
+            color: #D10000;
         }
 
         .footer-links a {
@@ -387,7 +447,7 @@
             transition: color 0.2s;
         }
         .footer-links a:hover {
-            color: #d32f2f;
+            color: #D10000;
         }
 
         .copyright {
@@ -400,7 +460,7 @@
 
         /* RESPONSIVE */
         @media (max-width: 900px) {
-            .hero, .about-split, .exp-grid, .testimonials, .about-second, footer {
+            .hero, .about-split, .exp-grid, .testimonials, .about-second, footer, .contact-wrap {
                 grid-template-columns: 1fr;
             }
             .hero-right {
@@ -408,14 +468,11 @@
                 border-left: none;
                 padding-left: 0;
             }
-            .cards-grid {
-                grid-template-columns: 1fr;
-            }
-            .clients-grid {
+            .cards-grid, .clients-grid, .film-grid {
                 grid-template-columns: 1fr;
             }
             .nav-links {
-                display: none; /* could add mobile menu later */
+                display: none; /* you could add a mobile menu later */
             }
         }
     </style>
@@ -425,20 +482,22 @@
     <div class="cursor" id="cursor"></div>
     <div class="cursor-follower" id="cursorFollower"></div>
 
+    <!-- NAVIGATION -->
     <nav>
         <div class="logo">GODMODE<span>STUDIOZ</span></div>
         <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">Work</a>
-            <a href="#">Services</a>
-            <a href="#">Contact</a>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#work">Work</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
         </div>
     </nav>
 
-    <!-- HERO SECTION (GodMode content) -->
-    <div class="hero">
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
         <div class="hero-left">
-            the first frame<br>they see<br>decides everything.
+            making first<br>impressions<br>since 2019
             <div class="small">India's first multimedia production studio</div>
         </div>
         <div class="hero-right">
@@ -449,16 +508,16 @@
                 <div>7 <span>lang</span></div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- FIRST ABOUT (exactly like "About me") -->
-    <div class="about-split">
+    <!-- FIRST ABOUT (Who We Are) -->
+    <section id="about" class="about-split">
         <h2>About me</h2>
         <p>GodMode Studioz wasn't built to be another post-production vendor. It was built to change how Indian cinema tells its story to the world. We've been in the edit suite at 3am before a major release. We built this so that never has to happen again. India's most celebrated productions trust us because we don't just deliver assets. We protect the vision.</p>
-    </div>
+    </section>
 
-    <!-- WHAT I DO – duplicated cards (GodMode services) -->
-    <div class="what-section">
+    <!-- WHAT I DO (duplicated cards) -->
+    <section class="what-section">
         <div class="section-header">
             <span class="eyebrow">What i do</span>
             <h2>Edit / Motion / Design</h2>
@@ -478,7 +537,7 @@
                 <h3>DESIGN</h3>
                 <p>Key art, character posters, branding – the first visual handshake.</p>
             </div>
-            <!-- duplicated set (identical) -->
+            <!-- duplicated set -->
             <div class="card">
                 <h3>AI</h3>
                 <p>Concept art, world-building, storyboards – assisted by machines, driven by humans.</p>
@@ -492,10 +551,10 @@
                 <p>Campaign planning, narrative positioning – the invisible architecture.</p>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- EXPERIENCE (GodMode timeline) -->
-    <div class="exp-section">
+    <!-- EXPERIENCE (from your content) -->
+    <section class="exp-section">
         <div class="section-header">
             <span class="eyebrow">Experience</span>
             <h2>Over a decade of shaping stories</h2>
@@ -537,10 +596,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- CLIENTS (GodMode's partners with funny descriptions) -->
-    <div class="clients-section">
+    <!-- CLIENTS (with witty descriptions) -->
+    <section class="clients-section">
         <div class="section-header">
             <span class="eyebrow">Clients</span>
             <h2>Studios we've shaped stories for.</h2>
@@ -571,11 +630,23 @@
                 <h4>Jio Studios</h4>
                 <p>Created trailers that convinced people to subscribe.</p>
             </div>
+            <div class="client-card">
+                <h4>Geetha Arts</h4>
+                <p>Made their titles look epic. They didn't even ask for revisions.</p>
+            </div>
+            <div class="client-card">
+                <h4>Suresh Prods</h4>
+                <p>We did 30+ films. They still call us by the wrong name sometimes.</p>
+            </div>
+            <div class="client-card">
+                <h4>Annapurna</h4>
+                <p>Designed posters that hung in theaters we never visited.</p>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <!-- TESTIMONIALS (fake funny quotes) -->
-    <div class="testimonials">
+    <!-- TESTIMONIALS (funny fake quotes) -->
+    <section class="testimonials">
         <div class="testimonial">
             <div class="quote">“He’s terrible, but it’s his birthday so I’d say something nice”</div>
             <div class="author">Michael Glass</div>
@@ -591,13 +662,82 @@
             <div class="author">Linh Le</div>
             <div class="role">Project Manager</div>
         </div>
-    </div>
+    </section>
 
-    <!-- SECOND ABOUT – playful -->
-    <div class="about-second">
+    <!-- SECOND ABOUT (playful) -->
+    <section class="about-second">
         <h2>Hiding<br>bad edits<br>since 2019</h2>
         <p>A visual studio – with skills that haven't been replaced by A.I (yet) – making good shit only if the paycheck is equally good.</p>
-    </div>
+    </section>
+
+    <!-- WORK SECTION (Film grid) -->
+    <section id="work" class="what-section">
+        <div class="section-header">
+            <span class="eyebrow">Work</span>
+            <h2>45 films · 7 languages</h2>
+        </div>
+        <div class="film-grid">
+            <!-- Telugu highlights (just a sample – you can expand) -->
+            <a href="#" class="film-card">
+                <div class="title">The RajaSaab</div>
+                <div class="lang">Telugu</div>
+            </a>
+            <a href="#" class="film-card">
+                <div class="title">Ala Vaikunthapurramuloo</div>
+                <div class="lang">Telugu</div>
+            </a>
+            <a href="#" class="film-card">
+                <div class="title">KGF 2</div>
+                <div class="lang">Kannada</div>
+            </a>
+            <a href="#" class="film-card">
+                <div class="title">Kantara</div>
+                <div class="lang">Kannada</div>
+            </a>
+            <a href="#" class="film-card">
+                <div class="title">12th Fail</div>
+                <div class="lang">Hindi</div>
+            </a>
+            <a href="#" class="film-card">
+                <div class="title">Raghu Thatha</div>
+                <div class="lang">Tamil</div>
+            </a>
+            <a href="#" class="film-card">
+                <div class="title">Empuraan 2</div>
+                <div class="lang">Malayalam</div>
+            </a>
+            <a href="#" class="film-card">
+                <div class="title">and many more...</div>
+                <div class="lang"> </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact-wrap">
+        <div>
+            <h2 class="section-header" style="border-bottom: none; margin-bottom: 20px;">Get in touch</h2>
+            <div class="contact-info">
+                <div class="ci">
+                    <div class="ci-l">Email</div>
+                    <a href="mailto:hello@godmodestudioz.com" class="ci-v">hello@godmodestudioz.com</a>
+                </div>
+                <div class="ci">
+                    <div class="ci-l">Instagram</div>
+                    <a href="https://instagram.com/godmodestudioz" class="ci-v">@godmodestudioz</a>
+                </div>
+                <div class="ci">
+                    <div class="ci-l">Location</div>
+                    <div class="ci-v">Bengaluru, India</div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2 class="section-header" style="border-bottom: none; margin-bottom: 20px;">Start a project</h2>
+            <p style="color: #aaa; font-size: 1.2rem; margin-bottom: 30px;">Tell us about your film – we'll tell you how we can make it unforgettable.</p>
+            <a href="#" class="card" style="display: inline-block; padding: 15px 40px; text-decoration: none; color: white; border: 1px solid #D10000;">Send a message →</a>
+        </div>
+    </section>
 
     <!-- FOOTER -->
     <footer>
@@ -606,14 +746,14 @@
             <p style="color:#666; margin-top:20px;">The first experience of your story.<br>Bengaluru, India</p>
         </div>
         <div class="footer-links">
-            <a href="#">Home</a>
-            <a href="#">Work</a>
-            <a href="#">Services</a>
-            <a href="#">Contact</a>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#work">Work</a>
+            <a href="#contact">Contact</a>
         </div>
         <div class="footer-links">
             <a href="#">Instagram</a>
-            <a href="#">godmodestudiozhq@gmail.com</a>
+            <a href="mailto:hello@godmodestudioz.com">Email</a>
             <a href="#">godmodestudioz.com</a>
         </div>
         <div class="copyright">
@@ -621,30 +761,30 @@
         </div>
     </footer>
 
-    <!-- GSAP ANIMATIONS -->
+    <!-- GSAP ANIMATIONS (scroll fades) -->
     <script>
         gsap.registerPlugin(ScrollTrigger);
 
-        // Custom cursor movement
+        // custom cursor
         const cursor = document.getElementById('cursor');
-        const cursorFollower = document.getElementById('cursorFollower');
+        const follower = document.getElementById('cursorFollower');
         document.addEventListener('mousemove', (e) => {
             gsap.to(cursor, { duration: 0.1, x: e.clientX, y: e.clientY });
-            gsap.to(cursorFollower, { duration: 0.3, x: e.clientX, y: e.clientY });
+            gsap.to(follower, { duration: 0.3, x: e.clientX, y: e.clientY });
         });
 
-        // Hover effect for links/buttons
+        // hover effect for links
         document.querySelectorAll('a, button').forEach(el => {
             el.addEventListener('mouseenter', () => {
-                gsap.to(cursorFollower, { duration: 0.3, width: 60, height: 60, borderColor: '#d32f2f' });
+                gsap.to(follower, { duration: 0.2, width: 60, height: 60, borderColor: '#D10000' });
             });
             el.addEventListener('mouseleave', () => {
-                gsap.to(cursorFollower, { duration: 0.3, width: 40, height: 40, borderColor: 'rgba(255,255,255,0.3)' });
+                gsap.to(follower, { duration: 0.2, width: 40, height: 40, borderColor: 'rgba(255,255,255,0.3)' });
             });
         });
 
-        // Scroll animations
-        gsap.utils.toArray('.card, .client-card, .testimonial').forEach((el, i) => {
+        // fade in cards on scroll
+        gsap.utils.toArray('.card, .client-card, .testimonial, .film-card').forEach((el, i) => {
             gsap.from(el, {
                 scrollTrigger: {
                     trigger: el,
@@ -654,11 +794,12 @@
                 },
                 y: 50,
                 opacity: 0,
-                duration: 0.6,
+                duration: 0.5,
                 delay: i * 0.05
             });
         });
 
+        // animate timeline items
         gsap.from('.exp-item', {
             scrollTrigger: {
                 trigger: '.exp-section',
@@ -668,16 +809,6 @@
             opacity: 0,
             duration: 0.5,
             stagger: 0.1
-        });
-
-        gsap.from('.about-second h2', {
-            scrollTrigger: {
-                trigger: '.about-second',
-                start: 'top 80%',
-            },
-            scale: 0.9,
-            opacity: 0,
-            duration: 0.8
         });
     </script>
 </body>
